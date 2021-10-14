@@ -53,7 +53,7 @@ async def filter(client, message):
     if 2 < len(message.text) < 100:    
         btn = []
         search = message.text
-        FM_FilmMania = f"**🗂️ Title:** {search}\n**⭐ Rating:** {random.choice(RATING)}\n**🎭 Genre:** {random.choice(GENRES)}\n**📤 Uploaded by {message.chat.title}**"
+        FM_FilmMania = {} f"**🗂️ Title:** {search}\n**⭐ Rating:** {random.choice(RATING)}\n**🎭 Genre:** {random.choice(GENRES)}\n**📤 Uploaded by {message.chat.title}**"
         files = await get_filter_results(request=search)
         if files:
             for file in files:
@@ -289,7 +289,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 return
         elif query.data == "help":
             buttons = [[
-                InlineKeyboardButton('🖇️ Join Group 🖇️', url='t.me/FM_NEW_MOVIES'),
+                InlineKeyboardButton('🖇️ Join Group 🖇️', url='t.me/FM_FilmMania'),
                 InlineKeyboardButton('Source Code', url="https://github.com/botfilters/hulk-v3-filter-bot")
                 ],[
                 InlineKeyboardButton('🖇️ Join Our Channel 🖇️', url=f'https://t.me/FM_NEW_MOVIES')
@@ -299,8 +299,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "about":
             buttons = [
                 [
-                    InlineKeyboardButton('Update Channel', url='t.me/FM_NEW_MOVIES'),
-                    InlineKeyboardButton('Source Code', url='t.me/FM_NEW_MOVIES')
+                    InlineKeyboardButton('✳️Update Channel✳️', url='t.me/FM_NEW_MOVIES'),
+                    InlineKeyboardButton('Source Code', url="https://github.com/botfilters/hulk-v3-filter-bot")
                 ]
                 ]
             await query.message.edit(text=f"{ABOUT}".format(TUTORIAL), reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
@@ -320,7 +320,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                         print(e)
                         f_caption=f_caption
                 if f_caption is None:
-                    f_caption = f"{files.file_name}"
+                    f_caption = f"@FM_FilmMania {files.file_name}"
                 buttons = [
                     [
                         InlineKeyboardButton('Join Now', url='t.me/FM_NEW_MOVIES')
@@ -354,7 +354,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = f"{title}"
                 buttons = [
                     [
-                        InlineKeyboardButton('🖇️ Join Group 🖇️', url='t.me/FM_NEW_MOVIES')
+                        InlineKeyboardButton('🖇️ Join Group 🖇️', url='t.me/FM_FilmMania')
                     ]
                     ]
                 
@@ -370,4 +370,4 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "pages":
             await query.answer()
     else:
-        await query.answer("കൌതുകും ലേശം കൂടുതൽ ആണല്ലേ 😁",show_alert=True)
+        await query.answer("കൌതുകും ലേശം കൂടുതൽ ആണല്ലേ 👀",show_alert=True)
