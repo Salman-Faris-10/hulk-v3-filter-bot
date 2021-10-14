@@ -90,7 +90,7 @@ async def answer(bot, query):
 def get_reply_markup(query):
     buttons = [[
         InlineKeyboardButton('Support Group', url='t.me/FM_FilmMania'),
-        InlineKeyboardButton('Support Group', url='t.me/FM_NEW_MOVIES')
+        InlineKeyboardButton('Support Channel', url='t.me/FM_NEW_MOVIES')
         ],[
         InlineKeyboardButton('🎪 Main Channel 🎪', url='t.me/FM_NEW_MOVIES')
         ],[
