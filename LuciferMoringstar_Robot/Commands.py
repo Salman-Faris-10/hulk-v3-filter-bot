@@ -28,7 +28,7 @@ async def start(bot, message):
             f"#NEWUSER: \n\nNew User [{message.from_user.first_name}](tg://user?id={message.from_user.id}) started @{BOT_USERNAME} !!",
         )
     usr_cmdall1 = message.text
-    if usr_cmdall1.startswith("/start pr0fess0r_99"):
+    if usr_cmdall1.startswith("/start FM_Admin_owner"):
         if AUTH_CHANNEL:
             invite_link = await bot.create_chat_invite_link(int(AUTH_CHANNEL))
             try:
@@ -84,7 +84,7 @@ async def start(bot, message):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('🖇️ Join Our Channel 🖇️', url=f'https://t.me/FM_NEW_MOVIES')
+                        InlineKeyboardButton('🖇️ Join Our Channel 🖇️', url=f't.me/FM_NEW_MOVIES')
                     ],
                     [
                         InlineKeyboardButton('🔍 Search again 🔎', switch_inline_query_current_chat='')
@@ -125,7 +125,7 @@ async def start(bot, message):
                             ),
                         InlineKeyboardButton
                             (
-                                "☣️ Mani Channel ☣️", url="https://t.me/FM_NEW_MOVIES"
+                                "☣️ Main Channel ☣️", url="t.me/FM_NEW_MOVIES"
                             )
                     ],
                     [
@@ -348,7 +348,7 @@ async def bot_info(bot, message):
         [
             InlineKeyboardButton
                 (
-                     'Join', url=f'https://t.me/FM_OLD_MOVIES'
+                     'Join', url='t.me/FM_OLD_MOVIES'
                 )
         ]
     ]
